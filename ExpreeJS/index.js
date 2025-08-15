@@ -17,9 +17,10 @@ app.get("/", (req, res) => {
   res.sendFile( path.join(import.meta.dirname,"practice.html"));
 });
   
-  app.get("/custom",(req,res)=>{
+  app.get("/login",(req,res)=>{
     //now, pubic folder can be accessed directly
     res.sendFile(path.join(import.meta.dirname,"public","pub.html"));
+
 
   })
 
