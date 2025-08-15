@@ -7,13 +7,21 @@ import fs from "fs";
 import path from "path";
 const app = express();
 app.use(cors());
-const PORT = 3000;
+const PORT = 3000; 
+
+    app.use(express.static("public"));
 
 app.get("/", (req, res) => {
+  //a single file can also be served as a response but in case of multiple files, We have to created a static folder which holds all static files like html css js and more
 
   res.sendFile( path.join(import.meta.dirname,"practice.html"));
 });
+  
+  app.get("/custom",(req,res)=>{
+    //now, pubic folder can be accessed directly
+    res.sendFile(path.join(import.meta.dirname,"public","pub.html"));
 
+  })
 
 app.get("/api/users", (req, res) => {
     fs.readFile("users.json", "utf-8", (err, data) => {
