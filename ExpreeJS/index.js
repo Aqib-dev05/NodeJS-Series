@@ -20,8 +20,10 @@ app.get("/", (req, res) => {
   app.get("/login",(req,res)=>{
     //now, pubic folder can be accessed directly
     res.sendFile(path.join(import.meta.dirname,"public","pub.html"));
-
-
+  })
+  app.get("/about/:person",(req,res)=>{
+    res.send(`About page is opened for ${req.params.person}`)
+    console.log(req.params)
   })
 
 app.get("/api/users", (req, res) => {
