@@ -41,7 +41,7 @@ app.post("/submit", async (req, res) => {
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
       to:email,
-      subject: `New message from ${name}`,
+      subject: `New message from ${process.env.EMAIL_USER}`,
       text: message,
     });
 
