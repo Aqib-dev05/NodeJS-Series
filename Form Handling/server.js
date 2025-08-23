@@ -5,7 +5,7 @@ require('dotenv').config();
 const app = express();
 const port = 3000;
 
-// Middleware to parse form data
+// Middleware to parse form data. Without it,no data shown in req.body and console undefined
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // Serve static files (like HTML)
@@ -55,4 +55,5 @@ app.post("/submit", async (req, res) => {
 // Start server
 app.listen(port, () => {
     console.log(`Server running at ${port}`);
+
 });
