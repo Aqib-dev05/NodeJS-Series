@@ -29,3 +29,49 @@ th {
   border-radius: 4px;
   padding: 4px 8px;
 }
+
+.faram{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  background-color: rgba(201, 93, 39, 0.829);
+  padding: 2rem;
+  width: 300px;
+  padding-top: 6rem;
+  border-radius: 8px;
+  position: relative;
+}
+form input{
+  border-radius: 6px;
+  border: none;
+  font-size: 1rem;
+  padding: 10px ;
+  width: 90%;
+}
+#x{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.hidden{
+  display: none;
+}

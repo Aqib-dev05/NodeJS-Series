@@ -1,23 +1,5 @@
 [
   {
-    "id": 3,
-    "name": "Chris Rodriguez",
-    "age": 51,
-    "salary": 68345
-  },
-  {
-    "id": 4,
-    "name": "Emily Harris",
-    "age": 40,
-    "salary": 68726
-  },
-  {
-    "id": 5,
-    "name": "Michael Smith",
-    "age": 42,
-    "salary": 113820
-  },
-  {
     "id": 6,
     "name": "Isabella Martinez",
     "age": 28,

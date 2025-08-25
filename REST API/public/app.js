@@ -1,3 +1,6 @@
+let form = document.querySelector(".faram");
+let X = document.querySelector("#x");
+
 //For button functionality
 function addTdClickListeners() {
   let tdata = document.querySelectorAll("td");
@@ -18,6 +21,9 @@ function addTdClickListeners() {
       }
 
       //for edit button
+      if (e.target.id == "edit") {
+        showPopup();
+      }
     });
   });
 }
@@ -49,4 +55,16 @@ function Display() {
     .catch((error) => console.error("Error:", error));
 }
 
+//popup form on edit button clicked
+function showPopup() {
+  form.classList.remove("hidden");
+  document.body.style.overflow = "hidden";
+}
+
+function closePopup() {
+  form.classList.add("hidden");
+  document.body.style.overflow = "auto";
+}
+
 document.onload = Display();
+X.addEventListener("click", closePopup);
