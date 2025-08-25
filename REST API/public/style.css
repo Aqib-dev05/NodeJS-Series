@@ -75,3 +75,13 @@ form input{
 .hidden{
   display: none;
 }
+#add{
+  margin: 20px;
+  background: royalblue;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 1rem;
+}

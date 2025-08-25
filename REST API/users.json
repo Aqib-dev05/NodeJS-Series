@@ -1,17 +1,5 @@
 [
   {
-    "id": 7,
-    "name": "aqib",
-    "age": "20",
-    "salary": "1000000"
-  },
-  {
-    "id": 8,
-    "name": "Mia Garcia",
-    "age": 36,
-    "salary": 50173
-  },
-  {
     "id": 9,
     "name": "William Anderson",
     "age": 43,
@@ -61,9 +49,9 @@
   },
   {
     "id": 17,
-    "name": "Joseph Garcia",
-    "age": 23,
-    "salary": 98872
+    "name": "abdullah",
+    "age": "22",
+    "salary": "2344"
   },
   {
     "id": 18,

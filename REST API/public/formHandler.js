@@ -8,22 +8,25 @@ export default function formHandler(id) {
     let salary = document.querySelector("#salary").value;
 
     let data = { name, age, salary };
-      document.querySelectorAll("input").forEach((input) => (input.value = ""));
-      document.querySelector(".faram").classList.add("hidden");
+    document.querySelectorAll("input").forEach((input) => (input.value = ""));
+    document.querySelector(".faram").classList.add("hidden");
 
-        fetch(`http://localhost:3000/users/${id}/edit`, {
-            method: "PATCH",
-            headers: {
-            "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data)
-        }).then((response) => response.json())
+    if (id != undefined) {
+      fetch(`http://localhost:3000/users/${id}/edit`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      })
+        .then((response) => response.json())
         .then((data) => {
-            console.log("Success:", data);
-            location.reload();
+          console.log("Success:", data);
+          location.reload();
         })
         .catch((error) => {
-            console.error("Error:", error);
+          console.error("Error:", error);
         });
+    }
   });
 }

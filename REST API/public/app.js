@@ -67,3 +67,6 @@ function Display() {
   function closeForm(){
     document.querySelector(".faram").classList.add("hidden");
   }
+
+  //add button functionality
+  document.querySelector("#add").addEventListener("click",showForm)
