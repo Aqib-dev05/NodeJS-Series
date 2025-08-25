@@ -1,5 +1,5 @@
-let form = document.querySelector(".faram");
-let X = document.querySelector("#x");
+import formHandler from "./formHandler.js";
+
 
 //For button functionality
 function addTdClickListeners() {
@@ -20,9 +20,10 @@ function addTdClickListeners() {
           .catch((error) => console.error("Error:", error));
       }
 
-      //for edit button
-      if (e.target.id == "edit") {
-        showPopup();
+      if(e.target.id == "edit"){
+        const id =
+          e.target.parentElement.parentElement.firstElementChild.textContent;
+        showForm(id);
       }
     });
   });
@@ -53,18 +54,16 @@ function Display() {
       addTdClickListeners();
     })
     .catch((error) => console.error("Error:", error));
-}
-
-//popup form on edit button clicked
-function showPopup() {
-  form.classList.remove("hidden");
-  document.body.style.overflow = "hidden";
-}
-
-function closePopup() {
-  form.classList.add("hidden");
-  document.body.style.overflow = "auto";
-}
-
-document.onload = Display();
-X.addEventListener("click", closePopup);
+  }
+  
+  document.onload = Display();
+  document.querySelector("#x").addEventListener("click",closeForm);
+  
+  //popup form handlers
+  function showForm(id){
+    document.querySelector(".faram").classList.remove("hidden");
+    formHandler(id);
+  }
+  function closeForm(){
+    document.querySelector(".faram").classList.add("hidden");
+  }

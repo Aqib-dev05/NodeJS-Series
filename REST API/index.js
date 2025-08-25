@@ -2,6 +2,7 @@ import express from "express";
 import path from "path";
 import cors from "cors";
 import fs from "fs";
+
 const app = express();
 const PORT = 3000;
 
@@ -25,8 +26,40 @@ app.get("/users", (req, res) => {
       });
 });
 
+app.patch("/users/:id/edit", (req, res) => {
+    const userId = parseInt(req.params.id);
+    const { name, age, salary } = req.body;
+
+    fs.readFile("users.json", "utf-8", (err, data) => {
+        if (err) {
+            console.error("Error reading file:", err);
+            res.status(500).json({ error: "Internal Server Error" });
+            return;
+        }
+
+        const users = JSON.parse(data);
+        const userIndex = users.findIndex(user => user.id === userId);
+        
+        if (userIndex === -1) {
+            return res.status(404).json({ message: "User not found" });
+        }
+
+        users[userIndex] = { ...users[userIndex], name, age, salary };
+        
+        fs.writeFile("users.json", JSON.stringify(users, null, 2), (err) => {
+            if (err) {
+                console.error("Error writing file:", err);
+                res.status(500).json({ error: "Internal Server Error" });
+                return;
+            }
+            res.json({ message: "User Updated Successfully!" });
+        });
+    });
+});
+
+
 app.delete("/users/:id", (req, res) => {
-    const userId = parseInt(req.params.id, 10); 
+    const userId = parseInt(req.params.id); 
     fs.readFile("users.json", "utf-8", (err, data) => {
         if (err) {
             console.error("Error reading file:", err);

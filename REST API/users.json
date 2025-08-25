@@ -1,15 +1,9 @@
 [
   {
-    "id": 6,
-    "name": "Isabella Martinez",
-    "age": 28,
-    "salary": 65588
-  },
-  {
     "id": 7,
-    "name": "Mia Brown",
-    "age": 54,
-    "salary": 83770
+    "name": "aqib",
+    "age": "20",
+    "salary": "1000000"
   },
   {
     "id": 8,
@@ -78,12 +72,6 @@
     "salary": 41004
   },
   {
-    "id": 19,
-    "name": "Robert Hall",
-    "age": 24,
-    "salary": 60848
-  },
-  {
     "id": 20,
     "name": "Chris Lee",
     "age": 27,
@@ -106,5 +94,47 @@
     "name": "Sophia Martinez",
     "age": 20,
     "salary": 83892
+  },
+  {
+    "id": 24,
+    "name": "Sophia Lewis",
+    "age": 58,
+    "salary": 85957
+  },
+  {
+    "id": 25,
+    "name": "Olivia Robinson",
+    "age": 30,
+    "salary": 35806
+  },
+  {
+    "id": 26,
+    "name": "Joseph Garcia",
+    "age": 23,
+    "salary": 108398
+  },
+  {
+    "id": 27,
+    "name": "Katie Lee",
+    "age": 21,
+    "salary": 95519
+  },
+  {
+    "id": 28,
+    "name": "Sarah Rodriguez",
+    "age": 57,
+    "salary": 57562
+  },
+  {
+    "id": 29,
+    "name": "Laura Martin",
+    "age": 25,
+    "salary": 94987
+  },
+  {
+    "id": 30,
+    "name": "Chris Anderson",
+    "age": 22,
+    "salary": 79085
   }
 ]
