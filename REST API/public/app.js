@@ -1,5 +1,5 @@
 import formHandler from "./formHandler.js";
-
+let isEdit = false;
 
 //For button functionality
 function addTdClickListeners() {
@@ -20,9 +20,10 @@ function addTdClickListeners() {
           .catch((error) => console.error("Error:", error));
       }
 
-      if(e.target.id == "edit"){
+      if (e.target.id == "edit") {
         const id =
           e.target.parentElement.parentElement.firstElementChild.textContent;
+        isEdit = true;
         showForm(id);
       }
     });
@@ -54,19 +55,24 @@ function Display() {
       addTdClickListeners();
     })
     .catch((error) => console.error("Error:", error));
-  }
-  
-  document.onload = Display();
-  document.querySelector("#x").addEventListener("click",closeForm);
-  
-  //popup form handlers
-  function showForm(id){
-    document.querySelector(".faram").classList.remove("hidden");
-    formHandler(id);
-  }
-  function closeForm(){
-    document.querySelector(".faram").classList.add("hidden");
-  }
+}
 
-  //add button functionality
-  document.querySelector("#add").addEventListener("click",showForm)
+document.onload = Display();
+document.querySelector("#x").addEventListener("click", closeForm);
+
+//popup form handlers
+function showForm(id) {
+  document.querySelector(".faram").classList.remove("hidden");
+  if (isEdit) {
+    formHandler(id);
+    isEdit = false;
+  } else {
+    formHandler();
+  }
+}
+function closeForm() {
+  document.querySelector(".faram").classList.add("hidden");
+}
+
+//add button functionality
+document.querySelector("#add").addEventListener("click", showForm);
