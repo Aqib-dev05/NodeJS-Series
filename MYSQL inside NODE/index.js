@@ -47,13 +47,13 @@ const connection = mysql.createConnection({
 // }
 
 //getting data from database
-let users = [];
-try {
-  connection.query("SELECT * From Users", (err, result) => {
-    if (err) throw err;
-    users = result; // directly assign result instead of pushing
-    console.log(users); // move console.log here to see results
-  });
-} catch (err) {
-  console.log(err);
-}
+// let users = [];
+// try {
+//   connection.query("SELECT * From Users", (err, result) => {
+//     if (err) throw err;
+//     users = result; // directly assign result instead of pushing
+//     console.log(users); // move console.log here to see results
+//   });
+// } catch (err) {
+//   console.log(err);
+// }
