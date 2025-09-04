@@ -19,7 +19,10 @@ function getRandomUser() {
     car: faker.vehicle.type(),
   };
 }
-const users = Array.from({ length: 3000 }, () => getRandomUser());
+const users = [];
+for (let i = 0; i < 3000; i++) {
+  users.push(getRandomUser());
+}
 fs.writeFileSync(
   path.join(import.meta.dirname, "faker.json"),
   JSON.stringify(users, null, 2)

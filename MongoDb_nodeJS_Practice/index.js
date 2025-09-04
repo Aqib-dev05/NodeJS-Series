@@ -1,5 +1,8 @@
 import mongoose, { Model } from "mongoose";
 import { Schema } from "mongoose";
+import { faker } from "@faker-js/faker";
+
+
 
 mongoose
   .connect("mongodb://127.0.0.1:27017/test")
@@ -55,6 +58,26 @@ const User = mongoose.model("User", userSchema);
 // ]);
 
 //?to find data
-  await User.find()
-  .then((res)=>{console.log(res)})
-  .catch((err)=>{console.log(err)})
+  // await User.find()
+  // .then((res)=>{console.log(res)})
+  // .catch((err)=>{console.log(err)})
+
+
+   //!adding faker data to mongodb
+   function getFakeData(){
+    return {
+    name: faker.person.fullName(),
+    email: faker.internet.email(),
+    age: faker.number.int({min:18, max:56})
+    }
+   }
+
+   async function insertFakeData() {
+     const fakeUsers=[];
+     for(let i=0;i<1000;i++){
+      fakeUsers.push(getFakeData())
+     }
+     await User.insertMany(fakeUsers);
+   }
+   
+   insertFakeData().catch(console.error);
